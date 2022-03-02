@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { CreateHelloDto } from './dto/create-hello.dto';
-import { UpdateHelloDto } from './dto/update-hello.dto';
 
 @Injectable()
 export class HelloService {
@@ -16,8 +15,8 @@ export class HelloService {
     return `This action returns a #${id} hello`;
   }
 
-  update(id: number, updateHelloDto: UpdateHelloDto) {
-    return `This action updates a #${id} hello`;
+  update(id: number, message: string) {
+    return `This action updates a #${id} hello ${message}`;
   }
 
   remove(id: number) {

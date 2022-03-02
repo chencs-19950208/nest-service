@@ -6,8 +6,8 @@ import { CreateHelloDto } from './dto/create-hello.dto';
 import { Hello, UserRole } from './classes/hello';
 
 @ApiBearerAuth()
-@Controller('/hello')
 @ApiTags('hello')
+@Controller('/hello')
 export class HelloController {
   constructor(private readonly helloService: HelloService) {}
 
@@ -35,7 +35,8 @@ export class HelloController {
   @Patch(':id')
   @ApiParam({ name: 'id' })
   @ApiBody({ description: '请输入 update Hello' })
-  update(@Param('id') id: string, @Body() { message }): string {
+  update(@Param('id') id: string, @Body() { message }) {
+    console.log(id, message);
     return this.helloService.update(+id, message);
   }
 
