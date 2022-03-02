@@ -1,10 +1,11 @@
 import { MiddlewareConsumer, Module, RequestMethod } from '@nestjs/common';
 
 import { HelloModule } from './modules/hello/hello.module';
+import { ExceptionModule } from './modules/exception/exception.module';
 import { LoggerMiddleware } from './common/middleware/logger.middleware';
 
 @Module({
-  imports: [HelloModule],
+  imports: [HelloModule, ExceptionModule],
   controllers: [],
   providers: [],
 })
