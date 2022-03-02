@@ -14,4 +14,8 @@ export class ExceptionService {
   remove(id: number) {
     return `This action removes a #${id} exception`;
   }
+
+  update(id: number, message: string) {
+    return `this action ${id} returns a ${message}`;
+  }
 }
